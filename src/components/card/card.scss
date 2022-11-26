@@ -1,0 +1,86 @@
+.sec1_top{
+  margin: 80px 0 0 240px;
+  color: #F5F5F5;
+}
+.sec1_carousel{
+  display: flex;
+  column-gap: 14px;
+  margin-left: 1603px;
+}
+.sec1_carousel button{
+  color: white;
+  background: #202020;
+  width: 30px;
+  height: 30px;
+  border: 1px solid grey;
+  border-radius: 25px;
+  font-size: 12px;
+  padding: 2px 0 0 2px;
+}
+.sec_1{
+  position: relative;
+
+}
+.sec1_bottom{
+  display: flex;
+}
+.sec1_card{
+  position: relative;
+  padding: 23px 32px 50px 240px;
+}
+.card_top h4{
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+}
+.card_bottom{
+  display: flex;
+  column-gap: 8px;
+  padding-top: 10px;
+}
+.card_bottom ul{
+  display: flex;
+  column-gap: 8px;
+  align-items: center;
+}
+.card_bottom li:first-child{
+  color: #F5F5F599;
+  list-style: none;
+}
+.card_bottom li{
+  color: white;
+  list-style: none;
+
+}
+.card_bottom p{
+  color: white;
+  background: #0074E4;
+  border-radius: 5px;
+  width: 57px;
+  height: 24px;
+  padding: 2px 8px 0 8px;
+  font-size: 18px;
+}
+.sec1_card2{
+  position: relative;
+  padding: 23px 32px 50px 0;
+}
+.sec1_card3{
+  position: relative;
+  padding: 23px 32px 50px 0;
+}
+.sec1_card3 li{
+  font-size: 14px;
+}
+.sec1_card4{
+  position: relative;
+  padding: 23px 32px 50px 0;
+}
+.sec1_card5{
+  position: relative;
+  padding: 23px 32px 50px 0;
+}
+.sec1_card6{
+  position: relative;
+  padding: 23px 32px 50px 0;
+}

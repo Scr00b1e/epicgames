@@ -1,0 +1,34 @@
+.epicgames_search{
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-left: 254px;
+  margin-top: 41px;
+}
+.epicgames_search input{
+  border: none;
+  color: #A0A0A0;
+  background: #202020;
+  border-radius: 25px;
+  font-size: 12px;
+  width: 160px;
+  height: 40px;
+  padding-left: 40px;
+}
+.epicgames_search ul{
+  display: flex;
+  column-gap: 28px;
+  margin-left: 28px;
+}
+.epicgames_search li:first-child{
+  list-style: none;
+  color: white;
+}
+.epicgames_search li{
+  list-style: none;
+  color: #666666;
+}
+.epicgames_search img{
+  position: absolute;
+  left: 17px;
+}
