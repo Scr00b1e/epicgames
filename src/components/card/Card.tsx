@@ -3,7 +3,7 @@ import './card.scss'
 
 const Card: React.FC = () => {
     return (
-        <section className="sec_1">
+        <section className="container">
             <div className="sec1_top">
                 <h5>Sale </h5>
             </div>
@@ -28,7 +28,7 @@ const Card: React.FC = () => {
                     </div>
 
                 </div>
-                <div className="sec1_card2">
+                <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/sifu.png" alt="" />
                         <h4>Sifu</h4>
@@ -42,10 +42,10 @@ const Card: React.FC = () => {
                     </div>
 
                 </div>
-                <div className="sec1_card3">
+                <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/final.png" alt="" />
-                        <h4>FINAL FANTASY VII REMAKE...</h4>
+                        <h4>FINAL FANTASY VII</h4>
                     </div>
                     <div className="card_bottom">
                         <p>-20%</p>
@@ -56,7 +56,7 @@ const Card: React.FC = () => {
                     </div>
 
                 </div>
-                <div className="sec1_card4">
+                <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/rdr2.png" alt="" />
                         <h4>Red Dead Redemption 2</h4>
@@ -70,7 +70,7 @@ const Card: React.FC = () => {
                     </div>
 
                 </div>
-                <div className="sec1_card5">
+                <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/cyberpunk.png" alt="" />
                         <h4>Cyberpunk 2077</h4>
@@ -84,7 +84,7 @@ const Card: React.FC = () => {
                     </div>
 
                 </div>
-                <div className="sec1_card6">
+                <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/kena.png" alt="" />
                         <h4>Kena: Bridge of Spirits</h4>

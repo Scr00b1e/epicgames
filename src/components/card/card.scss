@@ -1,7 +1,7 @@
 //sec1 === first section
 
 .sec1_top {
-  margin: 80px 0 0 240px;
+  margin: 80px 0 0;
   color: #F5F5F5;
 }
 
@@ -29,16 +29,29 @@
 
 .sec1_bottom {
   display: flex;
+  justify-content: center;
 }
 
 .sec1_card {
   position: relative;
-  padding: 23px 32px 50px 240px;
+  padding: 23px 32px 50px 0;
+
+  cursor: pointer;
+  // overflow: hidden;
+
+  // img {
+  //   overflow: hidden;
+  //   transition: all 2s ease-in-out;
+
+  //   &:hover {
+  //     scale: 1.1;
+  //   }
+  // }
 }
 
 .card_top h4 {
   color: white;
-  font-size: 16px;
+  font-weight: 400;
   margin-top: 10px;
 }
 
@@ -73,33 +86,4 @@
   height: 24px;
   padding: 2px 8px 0 8px;
   font-size: 18px;
-}
-
-.sec1_card2 {
-  position: relative;
-  padding: 23px 32px 50px 0;
-}
-
-.sec1_card3 {
-  position: relative;
-  padding: 23px 32px 50px 0;
-}
-
-.sec1_card3 li {
-  font-size: 14px;
-}
-
-.sec1_card4 {
-  position: relative;
-  padding: 23px 32px 50px 0;
-}
-
-.sec1_card5 {
-  position: relative;
-  padding: 23px 32px 50px 0;
-}
-
-.sec1_card6 {
-  position: relative;
-  padding: 23px 32px 50px 0;
 }
