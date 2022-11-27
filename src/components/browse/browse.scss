@@ -1,0 +1,24 @@
+.browse {
+    margin: 50px 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__click {
+        margin-bottom: 40px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__title {
+        font-weight: 400;
+        margin-right: 15px;
+    }
+
+    &__subtitle {
+        color: rgba($color: #fff, $alpha: .5);
+    }
+}
