@@ -4,6 +4,7 @@ import Search from "./components/search/Search";
 import Card from "./components/card/Card";
 import Header from './components/header/Header';
 import Intro from './components/Intro/Intro';
+import FreeGames from './components/freeGames/FreeGames';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Search />
       <Intro />
       <Card />
+      <FreeGames />
     </div>
   );
 }
