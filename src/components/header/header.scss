@@ -1,0 +1,50 @@
+.header{
+  position: relative;
+  background: #2A2A2A;
+  height: 52px;
+  width: 1920px;
+
+  &_left {
+    ul {
+      position: absolute;
+      top: 17px;
+      display: flex;
+      column-gap: 28px;
+      padding-left: 73px;
+    }
+    li {
+      color: #CCCCCC;
+      list-style: none;
+      font-size: 12px;
+    }
+    img {
+      margin: 8px 0 8px 8px;
+    }
+  }
+  &_right {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 70px;
+    top: 18px;
+
+    img {
+      padding-left: 36px;
+      padding-right: 8px;
+    }
+    p {
+      color: #E7E7E7;
+      font-size: 12px;
+      margin-right: 78px;
+    }
+    button {
+      color: white;
+      background: #007AFF;
+      width: 64px;
+      height: 52px;
+      border: none;
+      position: absolute;
+      right: 0;
+    }
+  }
+}

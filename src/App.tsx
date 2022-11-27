@@ -1,11 +1,12 @@
 import React from 'react';
-import Intro from './components/Intro/Intro';
 import './global.scss'
+import Search from "./components/search/Search";
+import Card from "./components/card/Card";
 
 function App() {
   return (
-    <div className="container">
-      <Intro />
+    <div className="App">
+
     </div>
   );
 }
