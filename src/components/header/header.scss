@@ -1,8 +1,8 @@
-.header{
+.header {
   position: relative;
   background: #2A2A2A;
-  height: 52px;
-  width: 1920px;
+  height: auto;
+  width: 100%;
 
   &_left {
     ul {
@@ -12,31 +12,41 @@
       column-gap: 28px;
       padding-left: 73px;
     }
+
     li {
       color: #CCCCCC;
       list-style: none;
-      font-size: 12px;
+      font-size: 18px;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+      }
     }
+
     img {
       margin: 8px 0 8px 8px;
     }
   }
+
   &_right {
     display: flex;
     align-items: center;
     position: absolute;
-    right: 70px;
+    right: 0;
     top: 18px;
 
     img {
       padding-left: 36px;
       padding-right: 8px;
     }
+
     p {
       color: #E7E7E7;
-      font-size: 12px;
+      font-size: 18px;
       margin-right: 78px;
     }
+
     button {
       color: white;
       background: #007AFF;
