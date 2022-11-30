@@ -24,6 +24,22 @@
         z-index: 200;
 
         width: 400px;
+
+        button {
+            color: white;
+            padding: 10px 20px;
+            font-size: 18px;
+
+            background: #0074E4;
+            border-radius: 5px;
+            border: 0;
+
+            cursor: pointer;
+        }
+    }
+
+    &__text {
+        font-size: 18px;
     }
 
     &__list {
