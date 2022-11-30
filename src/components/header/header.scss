@@ -1,16 +1,25 @@
 .header {
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   background: #2A2A2A;
   height: auto;
   width: 100%;
+  padding: 10px 20px;
 
   &_left {
+    display: flex;
+    align-items: center;
+
     ul {
-      position: absolute;
-      top: 17px;
       display: flex;
       column-gap: 28px;
-      padding-left: 73px;
+      padding-left: 30px;
+
+      a {
+        text-decoration: none;
+      }
     }
 
     li {
@@ -23,18 +32,15 @@
         color: #fff;
       }
     }
+  }
 
-    img {
-      margin: 8px 0 8px 8px;
-    }
+  &__img {
+    cursor: pointer;
   }
 
   &_right {
     display: flex;
     align-items: center;
-    position: absolute;
-    right: 0;
-    top: 18px;
 
     img {
       padding-left: 36px;
@@ -44,17 +50,18 @@
     p {
       color: #E7E7E7;
       font-size: 18px;
-      margin-right: 78px;
+      margin-right: 15px;
     }
 
     button {
-      color: white;
-      background: #007AFF;
-      width: 64px;
       height: 52px;
+      padding: 0 10px;
+
+      color: white;
+      font-size: 18px;
+
+      background: #007AFF;
       border: none;
-      position: absolute;
-      right: 0;
     }
   }
 }
