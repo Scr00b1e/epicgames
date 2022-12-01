@@ -8,10 +8,8 @@ const Card: React.FC = () => {
                     <h5>大特卖聚焦 </h5>
                 </div>
                 <div className="sec1_carousel">
-                    {/*<button>*/}
-                    {/*    <*/}
-                    {/*</button>*/}
-                    {/*<button>></button>*/}
+                    <img src="img/strelka2.png" alt=""/>
+                    <img src="img/strelka.png" alt=""/>
                 </div>
                 <div className="sec1_bottom">
                     <div className="sec1_card">
@@ -101,6 +99,6 @@ const Card: React.FC = () => {
                 </div>
             </section>
         )
-    }
+    };
 
 export default Card
