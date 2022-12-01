@@ -8,12 +8,9 @@ const Card: React.FC = () => {
                 <h5>Sale </h5>
             </div>
             <div className="sec1_carousel">
-                {/*<button>*/}
-                {/*    <*/}
-                {/*</button>*/}
-                {/*<button>></button>*/}
-            </div>
-            <div className="sec1_bottom">
+                    <img src="img/strelka2.png" alt=""/>
+                    <img src="img/strelka.png" alt=""/>
+                </div>
                 <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/dracon.png" alt="" />
@@ -25,9 +22,12 @@ const Card: React.FC = () => {
                             <li>̶¥̶1̶9̶9̶</li>
                             <li>¥159.20</li>
                         </ul>
+                
+                
+                        </div>
+
                     </div>
 
-                </div>
                 <div className="sec1_card">
                     <div className="card_top">
                         <img src="img/sifu.png" alt="" />
@@ -98,9 +98,8 @@ const Card: React.FC = () => {
                     </div>
 
                 </div>
-            </div>
         </section>
     )
-}
+};
 
 export default Card
