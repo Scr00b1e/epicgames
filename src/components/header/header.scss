@@ -8,6 +8,10 @@
   width: 100%;
   padding: 10px 20px;
 
+  a {
+    text-decoration: none;
+  }
+
   &_left {
     display: flex;
     align-items: center;
@@ -38,19 +42,29 @@
     cursor: pointer;
   }
 
-  &_right {
+  &__login {
     display: flex;
     align-items: center;
+    margin-right: 15px;
+
+    cursor: pointer;
 
     img {
-      padding-left: 36px;
-      padding-right: 8px;
+      margin-right: 10px;
     }
 
     p {
       color: #E7E7E7;
       font-size: 18px;
-      margin-right: 15px;
+    }
+  }
+
+  &_right {
+    display: flex;
+    align-items: center;
+
+    img {
+      margin-right: 10px;
     }
 
     button {
@@ -62,6 +76,7 @@
 
       background: #007AFF;
       border: none;
+      cursor: pointer;
     }
   }
 }

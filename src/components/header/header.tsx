@@ -13,17 +13,21 @@ const Header: React.FC = () => {
                 </Link>
                 <ul>
                     <li>Store</li>
-                    <a href='https://store.epicgames.com/' target='_blank'>
+                    <a href='https://store.epicgames.com/'>
                         <li>FAQ</li>
                     </a>
                 </ul>
             </div>
-            <div className="header_right">
-                <img src="./img/Union.png" alt="" />
-                <img src="./img/Vector.png" alt="" />
-                <p>Log in</p>
-                <button>Get client</button>
-            </div>
+            <a href="https://store.epicgames.com/">
+                <div className="header_right">
+                    <img src="./img/Union.png" alt="" />
+                    <div className='header__login'>
+                        <img src="./img/Vector.png" alt="" />
+                        <p>Log in</p>
+                    </div>
+                    <button>Get client</button>
+                </div>
+            </a>
         </div>
     )
 }
