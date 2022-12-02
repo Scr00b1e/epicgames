@@ -10,7 +10,23 @@ const Home: React.FC = () => {
         <div className='home'>
             <Search />
             <Intro />
-            <Card />
+            {/* <Card /> */}
+            <div className="container">
+                <div className="sale__top">
+                    <h3>Games on Sale</h3>
+                    <div className="sale_carousel">
+                        <button className='sale__btn'>
+                            <img src="img/strelka2.png" alt=""/>
+                        </button>
+                        <button className='sale__btn'>
+                            <img src="img/strelka.png" alt=""/>
+                        </button>
+                    </div>
+                </div>
+                <div className="sale__content">
+                    <Card/>
+                </div>
+            </div>
             <FreeGames />
             <Browse />
         </div>

@@ -36,3 +36,31 @@ ul {
 
     cursor: pointer;
 }
+
+.sale {
+    &__top {
+        margin-top: 30px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+            font-size: 22px;
+            font-weight: 400;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        margin-bottom: 30px;
+    }
+}
+.sale__btn {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
