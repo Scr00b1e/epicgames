@@ -10,12 +10,16 @@ const Home: React.FC = () => {
     const [items, setItems] = React.useState([])
 
     const GetItems = async () => {
-        await fetch('https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games')
-        .then((res) => {
-            return res.json()
-        }).then((arr) => {
-            setItems(arr)
-        })
+        try {
+            await fetch('https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games')
+                .then((res) => {
+                    return res.json()
+                }).then((arr) => {
+                    setItems(arr)
+                })
+        } catch {
+            alert('Error!')
+        }
     }
 
     React.useEffect(() => {
