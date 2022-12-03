@@ -5,7 +5,23 @@ import Intro from '../components/Intro/Intro';
 import FreeGames from '../components/freeGames/FreeGames';
 import Browse from '../components/browse/Browse';
 
+
 const Home: React.FC = () => {
+    const [items, setItems] = React.useState([])
+
+    const GetItems = async () => {
+        await fetch('https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games')
+        .then((res) => {
+            return res.json()
+        }).then((arr) => {
+            setItems(arr)
+        })
+    }
+
+    React.useEffect(() => {
+        GetItems()
+    }, [])
+
     return (
         <div className='home'>
             <Search />
@@ -24,7 +40,11 @@ const Home: React.FC = () => {
                     </div>
                 </div>
                 <div className="sale__content">
-                    <Card/>
+                    {
+                        items.map((obj: any) => (
+                            <Card {...obj} key={obj.id}/>
+                        ))
+                    }
                 </div>
             </div>
             <FreeGames />

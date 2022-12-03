@@ -1,18 +1,26 @@
 import React from 'react'
 import './card.scss'
 
-const Card: React.FC = () => {
+type PropsType = {
+    title: string
+    image: string
+    price: number
+    noPrice: number
+    id: string
+}
+
+const Card: React.FC<PropsType> = ({title, image, price, noPrice}) => {
     return (
         <div className="card">
             <div className="card__top">
-                <img src="img/rdr2.png" alt="" />
-                <h4>Red Dead Redemption 2</h4>
+                <img src={image} alt="" />
+                <h4>{title}</h4>
             </div>
             <div className="card__bottom">
                 <p>-50%</p>
                 <ul>
-                    <li>̶¥̶2̶2̶8̶̶</li>
-                    <li>¥114</li>
+                    <li>̶¥̶{noPrice}</li>
+                    <li>¥{price}</li>
                 </ul>
             </div>
         </div>
