@@ -1,6 +1,7 @@
 import React from 'react'
 import './card.scss'
 
+<<<<<<< HEAD
 const Card: React.FC = () => {
         return (
             <section className="sec_1">
@@ -100,5 +101,32 @@ const Card: React.FC = () => {
             </section>
         )
     };
+=======
+type PropsType = {
+    title: string
+    image: string
+    price: number
+    noPrice: number
+    id: string
+}
+
+const Card: React.FC<PropsType> = ({title, image, price, noPrice}) => {
+    return (
+        <div className="card">
+            <div className="card__top">
+                <img src={image} alt="" />
+                <h4>{title}</h4>
+            </div>
+            <div className="card__bottom">
+                <p>-50%</p>
+                <ul>
+                    <li>̶¥̶{noPrice}</li>
+                    <li>¥{price}</li>
+                </ul>
+            </div>
+        </div>
+    )
+};
+>>>>>>> master
 
 export default Card

@@ -1,20 +1,24 @@
-import React from 'react';
-import Header from "./components/header/header";
+
+// import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Header from './components/header/Header';
 import './global.scss'
-import Search from "./components/search/Search";
-import Card from "./components/card/Card";
+import Home from './pages/Home';
 import Footer from "./components/footer/Footer";
-import Spiderpage from "./components/spiderpage/Spiderpage"
+import FullGame from './components/FullGame/FullGame';
 
 function App() {
   return (
-    <div className="App">
-      <Header/>
-      <Search/>
-      <Card/>
-      <Footer/>
-      <Spiderpage/>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route element={<Home />} path={'/'}/>
+          <Route element={<FullGame/>} path={'/games/:id'}/>
+        </Routes>
+        <Footer/>
+      </div>
+    </BrowserRouter>
   );
 }
 export default App;

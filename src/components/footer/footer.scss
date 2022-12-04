@@ -1,6 +1,7 @@
  .footer {
    position: relative;
    margin-top: 100px;
+<<<<<<< HEAD
    width: 1920px;
    height: 411px;
    background: #202020;
@@ -86,5 +87,66 @@
        margin-top: 160px;
        margin-left: 170px;
      }
+=======
+   padding: 15px 0;
+
+   width: 100%;
+   height: auto;
+   background: #202020;
+
+   &__top {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
+
+   &__socials {
+     display: flex;
+     align-items: center;
+
+     p {
+       font-size: 20px;
+       margin-right: 10px;
+
+       a {
+         color: #fff;
+       }
+     }
+
+     img {
+       width: 50px;
+       height: 50px;
+
+       margin: 0 5px;
+       padding: 5px;
+
+       border: 1px #fff solid;
+       border-radius: 5px;
+       background: #fff;
+       //  box-shadow: 5px 5px 25px #000;
+
+
+       cursor: pointer;
+     }
+   }
+
+   &__btn {
+     border: none;
+     background: none;
+     cursor: pointer;
+   }
+
+   &__bottom {
+     margin: 30px 0;
+
+     p {
+       text-align: center;
+       font-size: 22px;
+
+       a {
+         color: #fff;
+       }
+     }
+>>>>>>> master
    }
  }
