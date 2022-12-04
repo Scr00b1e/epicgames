@@ -57,12 +57,11 @@ const FullGame: React.FC = () => {
                     </div>
 
                     <div className="trailer">
-                        <img src="./img/milesmorales.webp" alt=""/>
-                        <img src="./img/milesmorales.webp" alt=""/>
-                        <img src="./img/milesmorales.webp" alt=""/>
-                        <img src="./img/milesmorales.webp" alt=""/>
+                        <img src="./img/milesmorales.png" alt=""/>
+                        <img src="./img/milesmorales.png" alt=""/>
+                        <img src="./img/milesmorales.png" alt=""/>
+                        <img src="./img/milesmorales.png" alt=""/>
                     </div>
-
                 </div>
 
                 <div className="left_bottom">
