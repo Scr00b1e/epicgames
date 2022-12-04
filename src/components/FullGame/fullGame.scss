@@ -1,3 +1,74 @@
 .fullGame {
     padding-top: 150px;
 }
+.spider {
+    position: relative;
+    margin-left: 240px;
+
+    .spider_left {
+
+        .left_top {
+            margin-top: 100px;
+
+
+            h1 {
+                font-size: 40px;
+            }
+
+            .raiting {
+                margin-top: 30px;
+                display: flex;
+                column-gap: 50px;
+                font-size: 23px;
+
+
+                .stars {
+                    display: flex;
+                    column-gap: 5px;
+                    margin-top: 10px;
+                }
+
+                img {
+                    width: 123px;
+                    height: 22px;
+                }
+
+                h3 {
+                    color: white;
+                    background: #2A2A2A;
+                    font-size: 16px;
+                    width: 39px;
+                    height: 26px;
+                    padding-left: 8px;
+                    border-radius: 5px;
+
+                }
+
+
+            }
+
+            .miles_img{
+
+                img{
+                    width: 895px;
+                    height: 484px;
+                    margin-top: 40px;
+                }
+            }
+
+            .trailer{
+                display: flex;
+                column-gap: 20px;
+                margin-top: 30px;
+                margin-left: 140px;
+                padding-bottom: 100px;
+                img{
+                    width: 120px;
+                    height: 71px;
+                }
+            }
+        }
+
+
+    }
+}
