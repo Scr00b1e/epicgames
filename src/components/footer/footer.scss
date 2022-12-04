@@ -1,90 +1,64 @@
  .footer {
    position: relative;
    margin-top: 100px;
-   width: 1920px;
-   height: 411px;
+   padding: 15px 0;
+
+   width: 100%;
+   height: auto;
    background: #202020;
 
-   .footer_left {
-     margin-left: 240px;
+   &__top {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
 
-     .left_top {
+   &__socials {
+     display: flex;
+     align-items: center;
 
-     p{
-       position: absolute;
-       top: 18px;
-       font-size: 14px;
-       color: rgba(255, 255, 255, 0.6);
-       margin-left: 450px;
-     }
-       .left_img {
-         display: flex;
-         padding-top: 18px;
-         column-gap: 12px;
-       }
+     p {
+       font-size: 20px;
+       margin-right: 10px;
 
-       .left_txt {
-         display: flex;
-         column-gap: 30px;
-
-         ul {
-           margin-top: 27px;
-
-
-           li {
-             list-style: none;
-             font-size: 14px;
-             margin-top: 4px;
-             color: #E7E7E7;
-           }
-         }
+       a {
+         color: #fff;
        }
      }
 
-     .left_bottom{
+     img {
+       width: 50px;
+       height: 50px;
 
-       p{
-         border-top: 1px solid rgba(255, 255, 255, 0.1);
-         font-size: 14px;
-         color: rgba(255, 255, 255, 0.6);
-         margin-top: 17px;
-         padding-top: 20px;
-       }
+       margin: 0 5px;
+       padding: 5px;
 
-       ul{
-         display: flex;
-         column-gap: 16px;
-         margin-top: 55px;
+       border: 1px #fff solid;
+       border-radius: 5px;
+       background: #fff;
+       //  box-shadow: 5px 5px 25px #000;
 
-         li{
-           list-style: none;
-           font-size: 14px;
-           color: #E7E7E7;
 
-         }
-       }
+       cursor: pointer;
      }
    }
 
-   .footer_right{
-     position: absolute;
-     top: 16px;
-     left: 1480px;
+   &__btn {
+     border: none;
+     background: none;
+     cursor: pointer;
+   }
 
-     .right_top{
-       display: flex;
-       align-items: center;
-       flex-direction: column;
-       row-gap: 33px;
+   &__bottom {
+     margin: 30px 0;
 
-       img:first-child{
-         padding-left: 170px;
+     p {
+       text-align: center;
+       font-size: 22px;
+
+       a {
+         color: #fff;
        }
-     }
-
-     .right_bottom{
-       margin-top: 160px;
-       margin-left: 170px;
      }
    }
  }
