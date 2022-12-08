@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import './fullGame.scss'
+import Skeleton from './Skeleton'
 
 const FullGame: React.FC = () => {
     const [game, setGame] = React.useState<{
@@ -9,8 +10,7 @@ const FullGame: React.FC = () => {
         title: string
         price: number
     }>()
-    console.log(game);
-
+    const [isLoading, setIsLoading] = React.useState(false)
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -18,11 +18,13 @@ const FullGame: React.FC = () => {
     React.useEffect(() => {
         const GetItems = async () => {
             try {
+                setIsLoading(true)
                 await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games/` + id)
                     .then((res) => {
                         return res.json()
                     }).then((arr) => {
                         setGame(arr)
+                        setIsLoading(false)
                     })
             } catch {
                 alert('Error!')
@@ -33,13 +35,21 @@ const FullGame: React.FC = () => {
     }, [])
 
     if (!game) {
-        return <p>Loading...</p>
+        return <h1>Undefined...</h1>
+    }
+    if (isLoading) {
+        return (
+            <div className="container">
+                <div className="fullGame">
+                    <Skeleton />
+                </div>
+            </div>
+        )
     }
 
     return (
         <div className='container'>
             <div className="fullGame">
-                FullGame
                 <h1>{game.title}</h1>
                 <img src={game.image} alt="" />
                 <p>{game.price}</p>
