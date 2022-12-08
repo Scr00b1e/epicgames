@@ -4,10 +4,13 @@ import './fullGame.scss'
 
 const FullGame: React.FC = () => {
     const [game, setGame] = React.useState<{
+        id: string
         image: string
         title: string
         price: number
     }>()
+    console.log(game);
+
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -15,7 +18,7 @@ const FullGame: React.FC = () => {
     React.useEffect(() => {
         const GetItems = async () => {
             try {
-                await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games` + id)
+                await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games/` + id)
                     .then((res) => {
                         return res.json()
                     }).then((arr) => {

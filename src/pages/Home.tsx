@@ -5,18 +5,22 @@ import Intro from '../components/Intro/Intro';
 import FreeGames from '../components/freeGames/FreeGames';
 import Browse from '../components/browse/Browse';
 import { Link } from 'react-router-dom';
+import Skeleton from '../components/card/Skeleton';
 
 
 const Home: React.FC = () => {
     const [items, setItems] = React.useState([])
+    const [isLoading, setIsLoading] = React.useState(false)
 
     const GetItems = async () => {
         try {
+            setIsLoading(true)
             await fetch('https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games')
                 .then((res) => {
                     return res.json()
                 }).then((arr) => {
                     setItems(arr)
+                    setIsLoading(false)
                 })
         } catch {
             alert('Error!')
@@ -26,6 +30,14 @@ const Home: React.FC = () => {
     React.useEffect(() => {
         GetItems()
     }, [])
+
+    const cards = items.map((obj: any) => (
+        <Link key={obj.id} to={`/games/${obj.id}`}>
+            <Card {...obj} />
+        </Link>
+    ))
+
+    const skeletons = [...new Array(6)].map((_, id) => <Skeleton key={id} />)
 
     return (
         <div className='home'>
@@ -45,11 +57,7 @@ const Home: React.FC = () => {
                 </div>
                 <div className="sale__content">
                     {
-                        items.map((obj: any) => (
-                            <Link key={obj.id} to={`/games/${obj.id}`}>
-                                <Card {...obj} />
-                            </Link>
-                        ))
+                        isLoading ? skeletons : cards
                     }
                 </div>
             </div>
