@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './search.scss'
 
 const Search: React.FC = () => {
@@ -10,8 +11,12 @@ const Search: React.FC = () => {
                     <input placeholder="search" type="search" />
                 </div>
                 <ul>
-                    <li className='active'>Explore</li>
-                    <li>Browse</li>
+                    <Link to={'/'}>
+                        <li className='active'>Explore</li>
+                    </Link>
+                    <Link to={'/catalog'}>
+                        <li>Browse</li>
+                    </Link>
                     <li>News</li>
                 </ul>
             </div>

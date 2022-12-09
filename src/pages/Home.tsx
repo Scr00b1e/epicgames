@@ -41,7 +41,6 @@ const Home: React.FC = () => {
 
     return (
         <div className='home'>
-            <Search />
             <Intro />
             <div className="container">
                 <div className="sale__top">

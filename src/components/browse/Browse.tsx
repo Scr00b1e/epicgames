@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './browse.scss'
 
 const Browse: React.FC = () => {
@@ -9,7 +10,9 @@ const Browse: React.FC = () => {
                 <div className="browse__words">
                     <div className="browse__click">
                         <h1 className='browse__title'>Browse the full catalog</h1>
-                        <button className='btn'>Go</button>
+                        <Link to={'/catalog'}>
+                            <button className='btn'>Go</button>
+                        </Link>
                     </div>
                     <p className="browse__subtitle">Find your next favorite by searching by type, element, price, and more...</p>
                 </div>
