@@ -19,6 +19,10 @@ ul {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 //for components 
 .container {
     width: 100%;
@@ -50,6 +54,7 @@ ul {
             font-weight: 400;
         }
     }
+
     &__content {
         display: flex;
         align-items: center;
@@ -59,6 +64,7 @@ ul {
         margin-bottom: 30px;
     }
 }
+
 .sale__btn {
     border: 0;
     background: none;

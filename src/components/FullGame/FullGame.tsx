@@ -10,7 +10,6 @@ const FullGame: React.FC = () => {
         title: string
         price: number
     }>()
-    const [isLoading, setIsLoading] = React.useState(false)
 
     const { id } = useParams()
     const navigate = useNavigate()
@@ -18,13 +17,11 @@ const FullGame: React.FC = () => {
     React.useEffect(() => {
         const GetItems = async () => {
             try {
-                setIsLoading(true)
                 await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games/` + id)
                     .then((res) => {
                         return res.json()
                     }).then((arr) => {
                         setGame(arr)
-                        setIsLoading(false)
                     })
             } catch {
                 alert('Error!')
@@ -35,9 +32,6 @@ const FullGame: React.FC = () => {
     }, [])
 
     if (!game) {
-        return <h1>Undefined...</h1>
-    }
-    if (isLoading) {
         return (
             <div className="container">
                 <div className="fullGame">
