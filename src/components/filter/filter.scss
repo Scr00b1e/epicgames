@@ -1,0 +1,39 @@
+.filter {
+    margin-top: 5px;
+    width: 300px;
+
+    &__words {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 24px;
+    }
+    &__search {
+        background: #202020;
+        border-radius: 25px;
+    
+        padding: 5px 10px;
+
+        input {
+            border: none;
+            background: none;
+        
+            font-size: 22px;
+            color: #A0A0A0;
+        
+            width: 250px;
+        
+            &:focus {
+              border: none;
+            }
+        }
+        
+        img {
+            margin-right: 10px;
+        }
+    }
+    
+}

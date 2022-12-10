@@ -3,6 +3,7 @@ import './catalog.scss'
 import { Link, useNavigate } from 'react-router-dom'
 import Card from '../../components/card/Card'
 import Skeleton from '../../components/card/Skeleton'
+import Filter from '../../components/filter/Filter'
 
 const Catalog: React.FC = () => {
     const [items, setItems] = React.useState([])
@@ -39,9 +40,12 @@ const Catalog: React.FC = () => {
     return (
         <div className='container'>
             <div className="catalog">
-                {
-                    isLoading ? skeletons : games
-                }
+                <div className="catalog__content">
+                    {
+                        isLoading ? skeletons : games
+                    }
+                </div>
+                <Filter/>
             </div>
         </div>
     )
