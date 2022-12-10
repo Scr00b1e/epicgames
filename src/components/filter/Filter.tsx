@@ -12,27 +12,54 @@ const Filter: React.FC = () => {
                 <img src="./img/search.png" alt="" />
                 <input placeholder="search" type="search" />
         </div>
-        <ul>
+        <ul className='filter__list'>
             <br/>
             <hr/>
-            <li>
-                Genre
+            <li className='filter__item'>
+                <div className='filter__visible'>
+                    <p className="filter__text">
+                        Genre
+                    </p>
+                    <img src="./img/more.svg" alt="" />
+                </div>
+                <ul className='active'>
+                    <li>
+                        test
+                    </li>
+                </ul>
             </li>
-            <br/>
             <hr/>
             <br/>
             <hr/>
-            <li>
-                Price
+            <li className='filter__item'>
+                <div className='filter__visible'>
+                    <p className="filter__text">
+                        price
+                    </p>
+                    <img src="./img/more.svg" alt="" />
+                </div>
+                <ul>
+                    <li>
+                        test
+                    </li>
+                </ul>
             </li>
-            <br/>
             <hr/>
             <br/>
             <hr/>
-            <li>
-                Platform
+            <li className='filter__item'>
+                <div className='filter__visible'>
+                    <p className="filter__text">
+                        platform
+                    </p>
+                    <img src="./img/more.svg" alt="" />
+                </div>
+                <ul>
+                    <li>
+                        test
+                    </li>
+                </ul>
             </li>
-            <br/>
             <hr/>
         </ul>
         

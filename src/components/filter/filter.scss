@@ -6,6 +6,8 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        margin-bottom: 20px;
     }
     &__title {
         font-weight: 400;
@@ -35,5 +37,47 @@
             margin-right: 10px;
         }
     }
-    
+    &__list {
+
+        hr {
+            opacity: .5;
+            height: .5px;
+        }
+    }
+    &__item {
+        ul {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+    }
+    &__visible {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        padding: 15px 0;
+        margin: 5px 0;
+
+        // border: 1px #fff solid;
+        cursor: pointer;
+
+        img {
+            width: 30px;
+            height: 30px;
+        }
+
+        &:hover {
+            .filter__text {
+                opacity: 1;
+            }
+        }
+    }
+    &__text {
+        text-transform: uppercase;
+        font-size: 18px;
+
+        opacity: .5;
+    }
 }
