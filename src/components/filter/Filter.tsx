@@ -2,10 +2,29 @@ import React from 'react'
 import './filter.scss'
 
 const Filter: React.FC = () => {
-    const [active, setActive] = React.useState(0)
-    const onClickFilter = (index: number) => {
+    const [active, setActive] = React.useState(null)
+    const onClickFilter = (index: any) => {
+        if(active === index) {
+            return setActive(null)
+        }
+
         setActive(index)
     }
+
+    const filter = [
+        {
+            name: 'Genre',
+            id: 0
+        },
+        {
+            name: 'Price',
+            id: 1
+        },
+        {
+            name: 'platform',
+            id: 2
+        }
+    ]
 
   return (
     <aside className='filter'>
@@ -18,7 +37,7 @@ const Filter: React.FC = () => {
                 <input placeholder="search" type="search" />
         </div>
         <ul className='filter__list'>
-            <br/>
+            {/* <br/>
             <hr/>
             <li className='filter__item' onClick={() => onClickFilter(0)} >
                 <div className='filter__visible'>
@@ -65,7 +84,25 @@ const Filter: React.FC = () => {
                     </li>
                 </ul>
             </li>
-            <hr/>
+            <hr/> */}
+            {
+                filter.map((obj, index) => (
+                    <li className='filter__item' key={obj.id} onClick={() => onClickFilter(index)}>
+                        <div className='filter__visible'>
+                            <p className="filter__text">
+                                {obj.name}
+                            </p>
+                            <img src="./img/more.svg" alt="" />
+                        </div>
+                        <ul className={active === index ? 'active' : ''}>
+                            <li>
+                                test
+                            </li>
+                        </ul>
+                    </li>
+                ))
+            }
+
         </ul>
         
     </aside>
