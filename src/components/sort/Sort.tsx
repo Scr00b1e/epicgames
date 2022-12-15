@@ -1,13 +1,26 @@
 import React from 'react'
 import './sort.scss'
 
-const Sort: React.FC = () => {
+type SortType = {
+  value: any
+  setSort: any
+}
+
+const Sort: React.FC<SortType> = ({value, setSort}) => {
+  const options = [
+    {name: 'Popular'},
+    {name: 'Alphabetic'},
+    {name: 'Price: Low'},
+    {name: 'Price: High'},
+  ]
+
   return (
     <select className='sort'>
-      <option value="Popular" selected>Popular</option>
-      <option value="Alphabet">Alphabetic</option>
-      <option value="pricelow">Price: Low</option>
-      <option value="pricehigh">Price: high</option>
+      {
+        options.map((obj) => (
+          <option>{obj.name}</option>
+        ))
+      }
     </select>
   )
 }

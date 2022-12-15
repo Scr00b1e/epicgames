@@ -9,6 +9,7 @@ import Sort from '../../components/sort/Sort'
 const Catalog: React.FC = () => {
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(false)
+    const [sort, setSort] = React.useState(0)
     const navigate = useNavigate()
 
     const getGames = async () => {
@@ -41,7 +42,7 @@ const Catalog: React.FC = () => {
     return (
         <div className='container'>
             <div className="catalog">
-                <Sort/>
+                <Sort value={sort} setSort={setSort}/>
                 <div className="catalog__content">
                     {
                         isLoading ? skeletons : games
