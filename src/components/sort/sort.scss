@@ -3,4 +3,22 @@
     top: 20px;
     left: 20px;
     z-index: 1;
+
+    width: 150px;
+    height: auto;
+
+    background: none;
+    border: none;
+
+    font-size: 22px;
+    color: #fff;
+
+    option {
+        font-size: 22px;
+        color: #fff;
+
+        border: none;
+        border-radius: 15px;
+        background: none;
+    }
 }
