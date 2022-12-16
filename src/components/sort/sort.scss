@@ -4,7 +4,7 @@
     left: 20px;
     z-index: 1;
 
-    width: 150px;
+    width: 200px;
     height: auto;
 
     background: none;
@@ -20,5 +20,38 @@
         border: none;
         border-radius: 15px;
         background: none;
+    }
+
+    &__words {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        cursor: pointer;
+    }
+
+    &__text {
+        margin-left: 10px;
+    }
+
+    &__popup {
+        position: absolute;
+        top: 30px;
+        left: 0px;
+
+        background: #000;
+        border-radius: 15px;
+    }
+
+    &__item {
+        width: 100%;
+        cursor: pointer;
+
+        padding: 5px 10px;
+
+        &:hover {
+            background: rgb(33, 99, 222);
+        }
     }
 }
