@@ -7,6 +7,7 @@ import Filter from '../../components/filter/Filter'
 import Sort from '../../components/sort/Sort'
 
 const Catalog: React.FC = () => {
+    //states
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(false)
     const [sort, setSort] = React.useState({
@@ -15,9 +16,11 @@ const Catalog: React.FC = () => {
     })
     const navigate = useNavigate()
 
+    //for fetching
     const order = sort.sortType.includes('-') ? 'asc' : 'desc'
     const sortBy = sort.sortType.replace('-', '')
 
+    //fetching
     const getGames = async () => {
         try {
             setIsLoading(true)
@@ -38,6 +41,7 @@ const Catalog: React.FC = () => {
         getGames()
     }, [sort])
 
+    //for items
     const games = items.map((obj: any) => (
         <Link key={obj.id} to={`/games/${obj.id}`}>
             <Card {...obj} />
