@@ -6,6 +6,11 @@ type SortType = {
   onChangeSort: any
 }
 
+interface ObjType {
+  name: string
+  sortType: string
+}
+
 const Sort: React.FC<SortType> = ({ value, onChangeSort }) => {
   const [open, setOpen] = React.useState(false)
   const options = [
@@ -29,7 +34,7 @@ const Sort: React.FC<SortType> = ({ value, onChangeSort }) => {
       {open &&
         <div className='sort__popup'>
           {
-            options.map((obj, i) => (
+            options.map((obj: ObjType, i) => (
               <div
                 className='sort__item'
                 key={i}

@@ -48,7 +48,7 @@ const Catalog: React.FC = () => {
     return (
         <div className='container'>
             <div className="catalog">
-                <Sort value={sort} onChangeSort={(i) => setSort(i)} />
+                <Sort value={sort} onChangeSort={(i: React.SetStateAction<{ name: string; sortType: string }>) => setSort(i)} />
                 <div className="catalog__content">
                     {
                         isLoading ? skeletons : games

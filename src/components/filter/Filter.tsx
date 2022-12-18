@@ -1,4 +1,5 @@
 import React from 'react'
+import Search from '../search/Search'
 import './filter.scss'
 
 const Filter: React.FC = () => {
@@ -32,10 +33,7 @@ const Filter: React.FC = () => {
                 <h1 className='filter__title'>Filter</h1>
                 <h1 className='filter__title'>Reset</h1>
             </div>
-            <div className="filter__search">
-                <img src="./img/search.png" alt="" />
-                <input placeholder="search" type="search" />
-            </div>
+            <Search/>
             <ul className='filter__list'>
                 {
                     filter.map((obj, index) => (

@@ -15,30 +15,6 @@
 
         cursor: pointer;
     }
-    &__search {
-        background: #202020;
-        border-radius: 25px;
-    
-        padding: 5px 10px;
-
-        input {
-            border: none;
-            background: none;
-        
-            font-size: 22px;
-            color: #A0A0A0;
-        
-            width: 250px;
-        
-            &:focus {
-              border: none;
-            }
-        }
-        
-        img {
-            margin-right: 10px;
-        }
-    }
     &__list {
 
         hr {
