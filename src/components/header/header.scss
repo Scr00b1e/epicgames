@@ -12,7 +12,7 @@
   background: #2A2A2A;
   height: auto;
   width: 100%;
-  padding: 10px 20px;
+  padding: 10px 30px;
 
   a {
     text-decoration: none;
@@ -42,6 +42,12 @@
         color: #fff;
       }
     }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: 400;
+    cursor: pointer;
   }
 
   &__img {
