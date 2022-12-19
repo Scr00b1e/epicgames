@@ -2,7 +2,12 @@ import React from 'react'
 import Search from '../search/Search'
 import './filter.scss'
 
-const Filter: React.FC = () => {
+type SearchProps = {
+    search: string
+    setSearch: any
+}
+
+const Filter: React.FC<SearchProps> = ({search, setSearch}) => {
     const [active, setActive] = React.useState(null)
     const onClickFilter = (index: any) => {
         if (active === index) {
@@ -33,7 +38,7 @@ const Filter: React.FC = () => {
                 <h1 className='filter__title'>Filter</h1>
                 <h1 className='filter__title'>Reset</h1>
             </div>
-            <Search/>
+            <Search search={search} setSearch={setSearch}/>
             <ul className='filter__list'>
                 {
                     filter.map((obj, index) => (

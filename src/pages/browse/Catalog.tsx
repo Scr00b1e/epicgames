@@ -14,6 +14,7 @@ const Catalog: React.FC = () => {
         name: 'popularity',
         sortType: 'rating'
     })
+    const [search, setSearch] = React.useState('')
     const navigate = useNavigate()
 
     //for fetching
@@ -42,7 +43,13 @@ const Catalog: React.FC = () => {
     }, [sort])
 
     //for items
-    const games = items.map((obj: any) => (
+    const games = items.filter((obj: any) => {
+        if(obj.title.toLowerCase().includes(search)) {
+            return true
+        }
+        return false
+    })
+        .map((obj: any) => (
         <Link key={obj.id} to={`/games/${obj.id}`}>
             <Card {...obj} />
         </Link>
@@ -58,7 +65,7 @@ const Catalog: React.FC = () => {
                         isLoading ? skeletons : games
                     }
                 </div>
-                <Filter />
+                <Filter search={search} setSearch={setSearch}/>
             </div>
         </div>
     )
