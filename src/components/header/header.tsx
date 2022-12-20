@@ -18,7 +18,9 @@ const Header: React.FC = () => {
                 </ul>
             </div>
             <div className="header_right">
-                <h1 className='header__title'>Wishlist</h1>
+                <Link to={'/wishlist'}>
+                    <h1 className='header__title'>Wishlist</h1>
+                </Link>
             </div>
         </div>
     )

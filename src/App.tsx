@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import FullGame from './components/FullGame/FullGame';
 import Navigate from './components/navigate/Navigate';
 import Catalog from './pages/browse/Catalog';
+import Wishlist from './pages/wishlist/Wishlist';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route element={<Home />} path={'/'} />
         <Route element={<Catalog />} path={'/catalog'} />
         <Route element={<FullGame />} path={'/games/:id'} />
+        <Route element={<Wishlist/>} path={'/wishlist'}/>
       </Routes>
       <Footer />
     </div>
