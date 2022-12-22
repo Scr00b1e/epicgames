@@ -1,9 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 export type WishType = {
-    id: number
+    id: string
     title: string
     price: number
+    noPrice: number
     image: string
     count: number
 }
@@ -48,7 +49,7 @@ export const wishSlice = createSlice({
 
         },
         removeItem(state: WishInitialState, action: PayloadAction<number>) {
-            state.subjects = state.subjects.filter((obj) => obj.id !== action.payload)
+            state.subjects = state.subjects.filter((obj) => obj.count !== action.payload)
         },
         clearItem(state) {
             state.subjects = []
@@ -56,6 +57,6 @@ export const wishSlice = createSlice({
     },
 })
 
-export const { addItem, minusItem, removeItem } = wishSlice.actions
+export const { addItem, minusItem, removeItem, clearItem } = wishSlice.actions
 
 export default wishSlice.reducer
