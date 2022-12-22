@@ -14,7 +14,7 @@ const Wishlist: React.FC = () => {
         <div className="wishlist__content">
           <WishlistItem/>
         </div>
-        <Link to={'/'}><button>Back</button></Link>
+        <Link to={'/'}><button className='wishlist__btn'>Back</button></Link>
       </div>
     </div>
   )

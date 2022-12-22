@@ -2,6 +2,7 @@
     margin-top: 50px;
 
     &__word {
+        margin-bottom: 30px;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -15,14 +16,32 @@
         display: flex;
         flex-wrap: wrap;
 
-        margin: 50px 0;
+        margin: 50px 0 70px;
+    }
+    &__btn {
+        padding: 5px 10px;
+        margin-bottom: 15px;
+
+        color: #fff;
+        font-size: 22px;
+
+        border: 1px #fff solid;
+        background: none;
+        cursor: pointer;
     }
 }
 .wishlistItem {
     width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    background: rgba(43, 43, 43, 0.082);
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(#000, 7);
 
     &__img {
         width: 130px;
