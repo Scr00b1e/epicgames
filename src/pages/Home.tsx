@@ -5,6 +5,7 @@ import FreeGames from '../components/freeGames/FreeGames';
 import Browse from '../components/browse/Browse';
 import { Link } from 'react-router-dom';
 import Skeleton from '../components/card/Skeleton';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 
 const Home: React.FC = () => {
@@ -54,9 +55,15 @@ const Home: React.FC = () => {
                     </div>
                 </div>
                 <div className="sale__content">
-                    {
-                        isLoading ? skeletons : cards
-                    }
+                    <Swiper 
+                    slidesPerView={6}
+                    spaceBetween={30}>
+                        <SwiperSlide>
+                        {
+                            isLoading ? skeletons : cards
+                        }
+                        </SwiperSlide>
+                    </Swiper>
                 </div>
             </div>
             <FreeGames />
