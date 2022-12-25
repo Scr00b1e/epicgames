@@ -10,12 +10,10 @@ export type WishType = {
 }
 
 interface WishInitialState {
-    payload: number
     subjects: WishType[]
 }
 
 const initialState: WishInitialState = {
-    payload: 0,
     subjects: [],
 }
 
@@ -23,20 +21,31 @@ export const wishSlice = createSlice({
     name: 'wish',
     initialState,
     reducers: {
-        addItem(state: WishInitialState, action: PayloadAction<WishType>) {
-            const findItem = state.subjects.find((obj) => obj.id === action.payload.id)
+        addItem(state, action) {
+            // const item = action.payload
+            // const findItem = state.subjects.find((obj) => obj.id === item.id)
 
-            if (findItem) {
-                findItem.count += 1;
-            } else {
-                state.subjects.push({
-                    ...action.payload,
-                    count: 1,
-                });
-            }
+            // if (findItem) {
+            //     findItem.count++;
+            // } else {
+            //     state.subjects.push({
+            //         ...action.payload,
+            //         count: 1,
+            //     });
+            // }
+            state.subjects.push({
+                ...action.payload,
+                count: 1
+            })
         },
         removeItem(state: WishInitialState, action: PayloadAction<string>) {
-            state.subjects = state.subjects.filter((obj) => obj.id !== action.payload)
+            const item = action.payload
+            state.subjects = state.subjects.filter((obj) => obj.id !== item)
+            const findItem = state.subjects.find((obj) => obj.id === item)
+
+            if (findItem) {
+                findItem.count--
+            }
         },
         clearItem(state) {
             state.subjects = []

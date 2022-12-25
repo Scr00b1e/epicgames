@@ -3,7 +3,6 @@ import Card from "../components/card/Card";
 import Intro from '../components/Intro/Intro';
 import FreeGames from '../components/freeGames/FreeGames';
 import Browse from '../components/browse/Browse';
-import { Link } from 'react-router-dom';
 import Skeleton from '../components/card/Skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper'
@@ -37,9 +36,7 @@ const Home: React.FC = () => {
 
     const cards = items.map((obj: any) => (
         <SwiperSlide>
-            <Link key={obj.id} to={`/games/${obj.id}`}>
-                <Card {...obj} />
-            </Link>
+            <Card key={obj.id}  {...obj} />
         </SwiperSlide>
     ))
 

@@ -10,9 +10,15 @@ const Wishlist: React.FC = () => {
   const items = useSelector((state: RootState) => state.wishSlice.subjects)
   const dispatch = useDispatch()
   const onClickReset = () => {
-    dispatch(clearItem)
-    console.log('u did it');
-    
+    if (window.confirm('Clear wishlist?')) {
+      dispatch(clearItem())
+    }
+  }
+
+  if (items.length === 0) {
+    return <>
+      <div>Empty</div>
+      <Link to={'/catalog'}><button className='wishlist__btn'>Back</button></Link></>
   }
 
   return (
@@ -29,7 +35,7 @@ const Wishlist: React.FC = () => {
             ))
           }
         </div>
-        <Link to={'/'}><button className='wishlist__btn'>Back</button></Link>
+        <Link to={'/catalog'}><button className='wishlist__btn'>Back</button></Link>
       </div>
     </div>
   )

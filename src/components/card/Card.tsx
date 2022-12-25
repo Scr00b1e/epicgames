@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { addItem } from '../../redux/slices/wishSlice/wishSlice'
+import { Link } from 'react-router-dom'
+import { addItem, removeItem } from '../../redux/slices/wishSlice/wishSlice'
 import './card.scss'
 
 type PropsType = {
@@ -9,15 +10,14 @@ type PropsType = {
     price: number
     noPrice: number
     id: string
-    count: number
 }
 
-const Card: React.FC<PropsType> = ({ title, image, price, noPrice }) => {
+const Card: React.FC<PropsType> = ({ id, title, image, price, noPrice }) => {
     const [clicked, setClicked] = React.useState(false)
     //redux
     const dispatch = useDispatch()
     const onClickAdd = () => {
-        const item: PropsType = {
+        const item = {
             title,
             image,
             price,
@@ -27,6 +27,9 @@ const Card: React.FC<PropsType> = ({ title, image, price, noPrice }) => {
         }
         dispatch(addItem(item))
         setClicked(!clicked)
+        if (!clicked) {
+            dispatch(removeItem(id))
+        }
     }
 
     return (
@@ -37,14 +40,16 @@ const Card: React.FC<PropsType> = ({ title, image, price, noPrice }) => {
                     alt=""
                     className='card__add'
                     onClick={onClickAdd} />
-                <img src={image} alt="" className='card__img' />
-                <h4>{title}</h4>
+                <Link to={`/games/${id}`}>
+                    <img src={image} alt="" className='card__img' />
+                    <h4>{title}</h4>
+                </Link>
             </div>
             <div className="card__bottom">
                 <p>-50%</p>
                 <ul>
-                    <li>̶¥̶{noPrice}</li>
-                    <li>¥{price}</li>
+                    <li>${noPrice}</li>
+                    <li>${price}</li>
                 </ul>
             </div>
         </div>

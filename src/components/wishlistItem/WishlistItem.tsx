@@ -12,7 +12,9 @@ type WishlistType = {
 const WishlistItem: React.FC<WishlistType> = ({ id, title, image, price }) => {
   const dispatch = useDispatch()
   const onClickRemove = () => {
-    dispatch(removeItem(id))
+    if (window.confirm('Are u sure u wanna remove?')) {
+      dispatch(removeItem(id))
+    }
   }
 
   return (

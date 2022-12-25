@@ -1,6 +1,6 @@
 import React from 'react'
 import './catalog.scss'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Card from '../../components/card/Card'
 import Skeleton from '../../components/card/Skeleton'
 import Filter from '../../components/filter/Filter'
@@ -45,16 +45,14 @@ const Catalog: React.FC = () => {
 
     //for items
     const games = items.filter((obj: any) => {
-        if(obj.title.toLowerCase().includes(search)) {
+        if (obj.title.toLowerCase().includes(search)) {
             return true
         }
         return false
     })
         .map((obj: any) => (
-        <Link key={obj.id} to={`/games/${obj.id}`}>
-            <Card {...obj} />
-        </Link>
-    ))
+            <Card key={obj.id} {...obj} />
+        ))
     const skeletons = [...new Array(12)].map((_, id) => <Skeleton key={id} />)
 
     return (
@@ -66,7 +64,7 @@ const Catalog: React.FC = () => {
                         isLoading ? skeletons : games
                     }
                 </div>
-                <Filter search={search} setSearch={setSearch}/>
+                <Filter search={search} setSearch={setSearch} />
             </div>
         </div>
     )
