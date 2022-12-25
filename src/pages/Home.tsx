@@ -36,9 +36,11 @@ const Home: React.FC = () => {
     }, [])
 
     const cards = items.map((obj: any) => (
-        <Link key={obj.id} to={`/games/${obj.id}`}>
-            <Card {...obj} />
-        </Link>
+        <SwiperSlide>
+            <Link key={obj.id} to={`/games/${obj.id}`}>
+                <Card {...obj} />
+            </Link>
+        </SwiperSlide>
     ))
 
     const skeletons = [...new Array(6)].map((_, id) => <Skeleton key={id} />)
@@ -49,26 +51,15 @@ const Home: React.FC = () => {
             <div className="container">
                 <div className="sale__top">
                     <h3>Games on Sale</h3>
-                    <div className="sale_carousel">
-                        <button className='sale__btn'>
-                            <img src="img/strelka2.png" alt="" />
-                        </button>
-                        <button className='sale__btn'>
-                            <img src="img/strelka.png" alt="" />
-                        </button>
-                    </div>
                 </div>
                 <div className="sale__content">
-                    <Swiper 
-                    slidesPerView={1}
-                    spaceBetween={30}
-                    navigation={true}
-                    modules={[Navigation]}>
-                        <SwiperSlide>
+                    <Swiper
+                        slidesPerView={6}
+                        navigation={true}
+                        modules={[Navigation]}>
                         {
                             isLoading ? skeletons : cards
                         }
-                        </SwiperSlide>
                     </Swiper>
                 </div>
             </div>
