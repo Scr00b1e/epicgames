@@ -3,27 +3,27 @@ import { useDispatch } from 'react-redux'
 import { setSort, Sort as SortType, SortPropertyEnum } from '../../redux/slices/filter/sortSlice'
 import './sort.scss'
 
-type sortItem = {
+type SortItem = {
   name: string
-  sortType: SortPropertyEnum
+  sortProperty: SortPropertyEnum
 }
 
 interface SortProperty {
   value: SortType
 }
 
-export const sortList: sortItem[] = [
-  {name: 'popular', sortProperty: SortPropertyEnum.RATING_DESC},
-  {name: 'alhapetic', sortProperty: SortPropertyEnum.TITLE_DESC},
-  {name: 'Price: Low', sortProperty: SortPropertyEnum.PRICE_ASC},
-  {name: 'Price: High', sortProperty: SortPropertyEnum.PRICE_DESC},
+export const sortList: SortItem[] = [
+  { name: 'popular', sortProperty: SortPropertyEnum.RATING_DESC },
+  { name: 'alhapetic', sortProperty: SortPropertyEnum.TITLE_DESC },
+  { name: 'Price: Low', sortProperty: SortPropertyEnum.PRICE_ASC },
+  { name: 'Price: High', sortProperty: SortPropertyEnum.PRICE_DESC },
 ]
 
 const Sort: React.FC<SortProperty> = ({ value }) => {
   const [open, setOpen] = React.useState(false)
   const dispatch = useDispatch()
 
-  const onClickSort = (obj: sortItem) => {
+  const onClickSort = (obj: SortItem) => {
     dispatch(setSort(obj))
     setOpen(false)
   }
