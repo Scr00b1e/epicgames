@@ -6,6 +6,10 @@ import Browse from '../components/browse/Browse';
 import { Link } from 'react-router-dom';
 import Skeleton from '../components/card/Skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper'
+
+import 'swiper/scss'
+import 'swiper/scss/navigation'
 
 
 const Home: React.FC = () => {
@@ -56,8 +60,10 @@ const Home: React.FC = () => {
                 </div>
                 <div className="sale__content">
                     <Swiper 
-                    slidesPerView={6}
-                    spaceBetween={30}>
+                    slidesPerView={1}
+                    spaceBetween={30}
+                    navigation={true}
+                    modules={[Navigation]}>
                         <SwiperSlide>
                         {
                             isLoading ? skeletons : cards
