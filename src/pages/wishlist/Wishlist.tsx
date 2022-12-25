@@ -11,6 +11,8 @@ const Wishlist: React.FC = () => {
   const dispatch = useDispatch()
   const onClickReset = () => {
     dispatch(clearItem)
+    console.log('u did it');
+    
   }
 
   return (

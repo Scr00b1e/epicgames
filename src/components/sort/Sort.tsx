@@ -1,27 +1,30 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setSort, Sort as SortType, SortPropertyEnum } from '../../redux/slices/filter/sortSlice'
 import './sort.scss'
 
-type SortType = {
-  value: any
-  onChangeSort: any
-}
-
-interface ObjType {
+type sortItem = {
   name: string
-  sortType: string
+  sortType: SortPropertyEnum
 }
 
-const Sort: React.FC<SortType> = ({ value, onChangeSort }) => {
-  const [open, setOpen] = React.useState(false)
-  const options = [
-    { name: 'Popular', sortType: 'rating' },
-    { name: 'Alphabetic', sortType: 'title' },
-    { name: 'Price: Low', sortType: '-price' },
-    { name: 'Price: High', sortType: 'price' },
-  ]
+interface SortProperty {
+  value: SortType
+}
 
-  const onClickSort = (i: number) => {
-    onChangeSort(i)
+export const sortList: sortItem[] = [
+  {name: 'popular', sortProperty: SortPropertyEnum.RATING_DESC},
+  {name: 'alhapetic', sortProperty: SortPropertyEnum.TITLE_DESC},
+  {name: 'Price: Low', sortProperty: SortPropertyEnum.PRICE_ASC},
+  {name: 'Price: High', sortProperty: SortPropertyEnum.PRICE_DESC},
+]
+
+const Sort: React.FC<SortProperty> = ({ value }) => {
+  const [open, setOpen] = React.useState(false)
+  const dispatch = useDispatch()
+
+  const onClickSort = (obj: sortItem) => {
+    dispatch(setSort(obj))
     setOpen(false)
   }
 
@@ -34,7 +37,7 @@ const Sort: React.FC<SortType> = ({ value, onChangeSort }) => {
       {open &&
         <div className='sort__popup'>
           {
-            options.map((obj: ObjType, i) => (
+            sortList.map((obj, i) => (
               <div
                 className='sort__item'
                 key={i}

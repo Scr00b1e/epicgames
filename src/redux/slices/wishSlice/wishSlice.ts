@@ -35,21 +35,8 @@ export const wishSlice = createSlice({
                 });
             }
         },
-        minusItem(state: WishInitialState, action: PayloadAction<WishType>) {
-            const findItem = state.subjects.find((obj) => obj.id === action.payload.id)
-
-            if (findItem) {
-                findItem.count -= 1;
-            } else {
-                state.subjects.push({
-                    ...action.payload,
-                    count: 1,
-                });
-            }
-
-        },
-        removeItem(state: WishInitialState, action: PayloadAction<number>) {
-            state.subjects = state.subjects.filter((obj) => obj.count !== action.payload)
+        removeItem(state: WishInitialState, action: PayloadAction<string>) {
+            state.subjects = state.subjects.filter((obj) => obj.id !== action.payload)
         },
         clearItem(state) {
             state.subjects = []
@@ -57,6 +44,6 @@ export const wishSlice = createSlice({
     },
 })
 
-export const { addItem, minusItem, removeItem, clearItem } = wishSlice.actions
+export const { addItem, removeItem, clearItem } = wishSlice.actions
 
 export default wishSlice.reducer

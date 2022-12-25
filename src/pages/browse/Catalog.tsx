@@ -5,21 +5,22 @@ import Card from '../../components/card/Card'
 import Skeleton from '../../components/card/Skeleton'
 import Filter from '../../components/filter/Filter'
 import Sort from '../../components/sort/Sort'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../redux/store'
 
 const Catalog: React.FC = () => {
     //states
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(false)
-    const [sort, setSort] = React.useState({
-        name: 'popularity',
-        sortType: 'rating'
-    })
     const [search, setSearch] = React.useState('')
     const navigate = useNavigate()
 
+    //redux
+    const sort = useSelector((state: RootState) => state.sortSlice.sort)
+
     //for fetching
-    const order = sort.sortType.includes('-') ? 'asc' : 'desc'
-    const sortBy = sort.sortType.replace('-', '')
+    const order = sort.sortProperty.includes('-') ? 'asc' : 'desc'
+    const sortBy = sort.sortProperty.replace('-', '')
 
     //fetching
     const getGames = async () => {
@@ -59,7 +60,7 @@ const Catalog: React.FC = () => {
     return (
         <div className='container'>
             <div className="catalog">
-                <Sort value={sort} onChangeSort={(i: React.SetStateAction<{ name: string; sortType: string }>) => setSort(i)} />
+                <Sort value={sort} />
                 <div className="catalog__content">
                     {
                         isLoading ? skeletons : games

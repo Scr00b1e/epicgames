@@ -11,8 +11,8 @@ type WishlistType = {
 
 const WishlistItem: React.FC<WishlistType> = ({ id, title, image, price }) => {
   const dispatch = useDispatch()
-  const onClickRemove = (i: number) => {
-    dispatch(removeItem(i))
+  const onClickRemove = () => {
+    dispatch(removeItem(id))
   }
 
   return (
@@ -22,7 +22,7 @@ const WishlistItem: React.FC<WishlistType> = ({ id, title, image, price }) => {
       <p className="wishlistItem__price">
         {price}$
       </p>
-      <div className="wishlistItem__delete" onClick={() => onClickRemove}>
+      <div className="wishlistItem__delete" onClick={onClickRemove}>
         <img src="./img/delete.png" alt="" />
       </div>
     </div>
