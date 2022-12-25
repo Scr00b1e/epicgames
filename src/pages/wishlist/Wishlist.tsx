@@ -16,9 +16,14 @@ const Wishlist: React.FC = () => {
   }
 
   if (items.length === 0) {
-    return <>
-      <div>Empty</div>
-      <Link to={'/catalog'}><button className='wishlist__btn'>Back</button></Link></>
+    return (
+      <div className='container'>
+        <div className='empty'>Empty</div>
+        <Link to={'/catalog'}>
+          <button className='wishlist__btn'>Back</button>
+        </Link>
+      </div>
+    )
   }
 
   return (

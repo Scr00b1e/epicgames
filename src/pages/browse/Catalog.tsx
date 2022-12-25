@@ -7,6 +7,7 @@ import Filter from '../../components/filter/Filter'
 import Sort from '../../components/sort/Sort'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
+import NotFound from '../../components/notFound/NotFound'
 
 const Catalog: React.FC = () => {
     //states
@@ -35,8 +36,8 @@ const Catalog: React.FC = () => {
                     setIsLoading(false)
                 })
         } catch {
-            alert('Something is wrong...')
             navigate('/')
+            return <NotFound />
         }
     }
     React.useEffect(() => {

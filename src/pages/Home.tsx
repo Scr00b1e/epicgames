@@ -9,6 +9,7 @@ import { Navigation } from 'swiper'
 
 import 'swiper/scss'
 import 'swiper/scss/navigation'
+import NotFound from '../components/notFound/NotFound';
 
 
 const Home: React.FC = () => {
@@ -26,7 +27,12 @@ const Home: React.FC = () => {
                     setIsLoading(false)
                 })
         } catch {
-            alert('Error!')
+            alert('check network!')
+            return (
+                <div className='home'>
+                    <NotFound />
+                </div>
+            )
         }
     }
 
