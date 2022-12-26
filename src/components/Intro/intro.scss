@@ -8,12 +8,14 @@
     &__main {
         // width: calc(1700px - 60%);
         width: 1200px;
+        overflow: hidden;
         position: relative;
     }
 
     &__img {
         // width: calc(1700px - 60%);
         width: 1200px;
+        height: 650px;
         border-radius: 30px;
     }
 
@@ -39,7 +41,7 @@
     }
 
     &__text {
-        font-size: 18px;
+        font-size: 22px;
     }
 
     &__list {

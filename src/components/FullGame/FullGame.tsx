@@ -47,20 +47,16 @@ const FullGame: React.FC = () => {
                 <div className="fullGame_left">
                     <div className="left_top">
                         <h1>{game.title}</h1>
-                        <div className="rating">
-                            <p>great boss battles</p>
-                            <h5>diverse cast of characters</h5>
-                        </div>
 
-                        <div className="fullGame_img">
-                            <img src="./img/christmas.jpg" alt="" />
+                        <div>
+                            <img src="../img/christmas.jpg" alt="" className="fullGame_img" />
                         </div>
 
                         <div className="trailer">
-                            <img src="./img/christmas.jpg" alt="" />
-                            <img src="./img/christmas.jpg" alt="" />
-                            <img src="./img/milesmorales.png" alt="" />
-                            <img src="./img/milesmorales.png" alt="" />
+                            <img src="../img/christmas.jpg" alt="" />
+                            <img src="../img/christmas.jpg" alt="" />
+                            <img src="../img/milesmorales.png" alt="" />
+                            <img src="../img/milesmorales.png" alt="" />
                         </div>
                     </div>
                     <div className="left_bottom">

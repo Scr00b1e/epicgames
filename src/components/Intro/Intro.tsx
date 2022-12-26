@@ -6,14 +6,11 @@ const Intro: React.FC = () => {
         <div className="container">
             <div className='intro'>
                 <div className="intro__main">
-                    <img src="./img/d.png" alt="" className='intro__img' />
+                    <img src="../img/christmas.jpg" alt="" className='intro__img' />
                     <div className="intro__words">
                         <p className='intro__text'>
                             sladfjklasjdfjasdfjskldfjlksadjfsdifjksdj sfjasoidfjejlk jklsdjfoa sjekjflkjsd ojflke jklwjefoi jsdghwowiofjlsdg,.msdjiwioxjkw tjowedsj
                         </p>
-                        <button>
-                            Add to wishlist now
-                        </button>
                     </div>
                 </div>
                 <ul className='intro__list'>
