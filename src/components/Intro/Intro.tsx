@@ -18,27 +18,27 @@ const Intro: React.FC = () => {
                 </div>
                 <ul className='intro__list'>
                     <li className='intro__item'>
-                        <img src="./img/4-icon.jpg" alt="" />
+                        <img src="https://via.placeholder.com/100" alt="" />
                         <h1 className='intro__title'>Item stuff</h1>
                     </li>
                     <li className='intro__item'>
-                        <img src="./img/4-icon.jpg" alt="" />
+                        <img src="https://via.placeholder.com/100" alt="" />
                         <h1 className='intro__title'>Item stuff</h1>
                     </li>
                     <li className='intro__item'>
-                        <img src="./img/4-icon.jpg" alt="" />
+                        <img src="https://via.placeholder.com/100" alt="" />
                         <h1 className='intro__title'>Item stuff</h1>
                     </li>
                     <li className='intro__item'>
-                        <img src="./img/4-icon.jpg" alt="" />
+                        <img src="https://via.placeholder.com/100" alt="" />
                         <h1 className='intro__title'>Item stuff</h1>
                     </li>
                     <li className='intro__item'>
-                        <img src="./img/4-icon.jpg" alt="" />
+                        <img src="https://via.placeholder.com/100" alt="" />
                         <h1 className='intro__title'>Item stuff</h1>
                     </li>
                     <li className='intro__item'>
-                        <img src="./img/4-icon.jpg" alt="" />
+                        <img src="https://via.placeholder.com/100" alt="" />
                         <h1 className='intro__title'>Item stuff</h1>
                     </li>
                 </ul>

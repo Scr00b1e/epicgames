@@ -2,6 +2,10 @@ import React from 'react'
 import './footer.scss'
 
 const Footer: React.FC = () => {
+    const onClickBtn = () => {
+        window.scrollTo(0, 0)
+    }
+
     return (
         <div className='footer'>
             <div className="container">
@@ -15,7 +19,7 @@ const Footer: React.FC = () => {
                             <img src="./img/github.png" alt="" />
                         </a>
                     </div>
-                    <button className='footer__btn'>
+                    <button className='footer__btn' onClick={onClickBtn}>
                         <img src="./img/strelka3.png" alt="" />
                     </button>
                 </div>

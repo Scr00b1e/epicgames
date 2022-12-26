@@ -1,4 +1,9 @@
 .search {
+    position: absolute;
+    top: 0;
+    right: 100px;
+    z-index: 1;
+
     background: #202020;
     border-radius: 25px;
 

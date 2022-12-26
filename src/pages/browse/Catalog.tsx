@@ -3,11 +3,11 @@ import './catalog.scss'
 import { useNavigate } from 'react-router-dom'
 import Card from '../../components/card/Card'
 import Skeleton from '../../components/card/Skeleton'
-import Filter from '../../components/filter/Filter'
 import Sort from '../../components/sort/Sort'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import NotFound from '../../components/notFound/NotFound'
+import Search from '../../components/search/Search'
 
 const Catalog: React.FC = () => {
     //states
@@ -23,13 +23,12 @@ const Catalog: React.FC = () => {
     //for fetching
     const order = sort.sortProperty.includes('-') ? 'asc' : 'desc'
     const sortBy = sort.sortProperty.replace('-', '')
-    const categories = category > 0 ? `category=${category}` : ''
 
     //fetching
     const getGames = async () => {
         try {
             setIsLoading(true)
-            await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/all?${categories}&sortBy=${sortBy}&order=${order}`)
+            await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/all?&sortBy=${sortBy}&order=${order}`)
                 .then((res) => {
                     return res.json()
                 })
@@ -67,12 +66,7 @@ const Catalog: React.FC = () => {
                         isLoading ? skeletons : games
                     }
                 </div>
-                <Filter 
-                    search={search} 
-                    setSearch={setSearch} 
-                    category={category}
-                    setCategory={(i:number) => setCategory(i)}
-                    />
+                <Search search={search} setSearch={setSearch}/>
             </div>
         </div>
     )

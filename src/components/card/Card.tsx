@@ -46,10 +46,10 @@ const Card: React.FC<PropsType> = ({ id, title, image, price, noPrice }) => {
                 </Link>
             </div>
             <div className="card__bottom">
-                <p>-50%</p>
+                {noPrice ? <p>-50%</p> : null}
                 <ul>
-                    <li>${noPrice}</li>
-                    <li>${price}</li>
+                    {noPrice && <li>{noPrice}$</li>}
+                    <li>{price}$</li>
                 </ul>
             </div>
         </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './freeGames.scss'
 
 const FreeGames: React.FC = () => {
@@ -10,29 +11,35 @@ const FreeGames: React.FC = () => {
                         <img src="./img/gift.png" alt="" />
                         <h1>Free Games</h1>
                     </div>
-                    <button className='btn'>See More</button>
+                    <Link to={'/catalog'}>
+                        <button className='btn'>See More</button>
+                    </Link>
                 </div>
                 <div className="free__content">
-                    <div className="free__item">
-                        <img src="./img/img1.png" alt="" />
-                        <div className="free__info">
-                            <p>Free now</p>
+                    <Link to={'/catalog'}>
+                        <div className="free__item">
+                            <img src="./img/img1.png" alt="" />
+                            <div className="free__info">
+                                <p>Free now</p>
+                            </div>
+                            <div className="free__words">
+                                <h4>Borderland 3</h4>
+                                <p>till 1/29/23 23:00</p>
+                            </div>
                         </div>
-                        <div className="free__words">
-                            <h4>Borderland 3</h4>
-                            <p>till 1/29/23 23:00</p>
+                    </Link>
+                    <Link to={'/catalog'}>
+                        <div className="free__item">
+                            <img src="./img/img1.png" alt="" />
+                            <div className="free__info">
+                                <p>Free now</p>
+                            </div>
+                            <div className="free__words">
+                                <h4>Borderland 3</h4>
+                                <p>till 1/29/23 23:00</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="free__item">
-                        <img src="./img/img1.png" alt="" />
-                        <div className="free__info">
-                            <p>Free now</p>
-                        </div>
-                        <div className="free__words">
-                            <h4>Borderland 3</h4>
-                            <p>till 1/29/23 23:00</p>
-                        </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>

@@ -46,7 +46,7 @@ const FullGame: React.FC = () => {
             <div className='fullGame'>
                 <div className="fullGame_left">
                     <div className="left_top">
-                        <h1>MARVEL Spider-Man: Miles Morales</h1>
+                        <h1>{game.title}</h1>
                         <div className="rating">
                             <p>great boss battles</p>
                             <h5>diverse cast of characters</h5>
@@ -69,20 +69,6 @@ const FullGame: React.FC = () => {
                                 his mentor Peter Parker as the new Spider-Man. When his house is in terrible danger, <br />
                                 Miles puts on a suit and becomes Spider-Man.</p>
                         </div>
-
-                        {/* <div className="genres">
-                            <div className="genres_left">
-                                <p>Genres</p>
-                                <a>Action,</a>
-                                <a>Open world</a>
-                            </div>
-                            <div className="genres_right">
-                                <p>Features</p>
-                                <a>Cloud Saves, </a>
-                                <a>Single, </a>
-                                <a><br /> Gamepad support</a>
-                            </div>
-                        </div> */}
 
                         <div className="left_txt">
                             <h1>MARVEL Spider-Man: Miles Morales</h1>
@@ -161,11 +147,13 @@ const FullGame: React.FC = () => {
                         <img src={game.image} alt="" className='right_img' />
                         <div className="right-buy">
                             <p className='right-information'>BASIC GAME</p>
-                            <p className='right-price'>45$</p>
+                            <p className='right-price'>{game.price}$</p>
                         </div>
 
                         <div className="right_btn">
-                            <button>BUY NOW</button>
+                            <a href="https://epicgames.com" target={'_blank'} rel={'no-referrer'}>
+                                <button>BUY NOW</button>
+                            </a>
                             <button>ADD TO WISHLIST</button>
                         </div>
                     </div>
