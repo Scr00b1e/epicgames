@@ -1,6 +1,6 @@
 // import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Header from './components/header/header';
+// import Header from './components/header/header';
 import './global.scss'
 import Home from './pages/Home';
 import Footer from "./components/footer/Footer";
@@ -12,7 +12,7 @@ import Wishlist from './pages/wishlist/Wishlist';
 function App() {
   return (
     <div className="App">
-      <Header />
+      {/* <Header /> */}
       <Navigate />
       <Routes>
         <Route element={<Home />} path={'/'} />
