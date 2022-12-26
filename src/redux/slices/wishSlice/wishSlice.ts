@@ -22,21 +22,17 @@ export const wishSlice = createSlice({
     initialState,
     reducers: {
         addItem(state, action) {
-            // const item = action.payload
-            // const findItem = state.subjects.find((obj) => obj.id === item.id)
+            const item = action.payload
+            const findItem = state.subjects.find((obj) => obj.id === item.id)
 
-            // if (findItem) {
-            //     findItem.count++;
-            // } else {
-            //     state.subjects.push({
-            //         ...action.payload,
-            //         count: 1,
-            //     });
-            // }
-            state.subjects.push({
-                ...action.payload,
-                count: 1
-            })
+            if (findItem) {
+                findItem.count++;
+            } else {
+                state.subjects.push({
+                    ...action.payload,
+                    count: 1,
+                });
+            }
         },
         removeItem(state: WishInitialState, action: PayloadAction<string>) {
             const item = action.payload

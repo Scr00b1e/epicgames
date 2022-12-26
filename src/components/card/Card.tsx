@@ -22,12 +22,12 @@ const Card: React.FC<PropsType> = ({ id, title, image, price, noPrice }) => {
             image,
             price,
             noPrice,
-            id: '',
+            id,
             count: 0
         }
         dispatch(addItem(item))
         setClicked(!clicked)
-        if (!clicked) {
+        if (clicked) {
             dispatch(removeItem(id))
         }
     }
