@@ -1,22 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import navigating from './navigate.json'
 import './navigate.scss'
-
-export const navigating = [{
-        id: 0,
-        title: 'Explore',
-        link: '/'
-    }, 
-    {
-        id: 1,
-        title: 'Browse',
-        link: '/catalog'
-    }, 
-    {
-        id: 2,
-        title: 'News',
-        link: '/'
-    }]
 
 const Search: React.FC = () => {
     const [active, setActive] = React.useState(0)
@@ -24,10 +9,6 @@ const Search: React.FC = () => {
     return (
         <div className="container">
             <div className="navigate">
-                <div className="navigate__search">
-                    <img src="./img/search.png" alt="" />
-                    <input placeholder="search" type="search" />
-                </div>
                 <ul>
                     {
                         navigating.map((obj) => (

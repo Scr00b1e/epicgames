@@ -14,6 +14,7 @@ const Catalog: React.FC = () => {
     const [items, setItems] = React.useState([])
     const [isLoading, setIsLoading] = React.useState(false)
     const [search, setSearch] = React.useState('')
+    const [category, setCategory] = React.useState(0)
     const navigate = useNavigate()
 
     //redux
@@ -22,12 +23,13 @@ const Catalog: React.FC = () => {
     //for fetching
     const order = sort.sortProperty.includes('-') ? 'asc' : 'desc'
     const sortBy = sort.sortProperty.replace('-', '')
+    const categories = category > 0 ? `category=${category}` : ''
 
     //fetching
     const getGames = async () => {
         try {
             setIsLoading(true)
-            await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/all?&sortBy=${sortBy}&order=${order}`)
+            await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/all?${categories}&sortBy=${sortBy}&order=${order}`)
                 .then((res) => {
                     return res.json()
                 })
@@ -42,7 +44,7 @@ const Catalog: React.FC = () => {
     }
     React.useEffect(() => {
         getGames()
-    }, [sort])
+    }, [sort, category])
 
     //for items
     const games = items.filter((obj: any) => {
@@ -65,7 +67,12 @@ const Catalog: React.FC = () => {
                         isLoading ? skeletons : games
                     }
                 </div>
-                <Filter search={search} setSearch={setSearch} />
+                <Filter 
+                    search={search} 
+                    setSearch={setSearch} 
+                    category={category}
+                    setCategory={(i:number) => setCategory(i)}
+                    />
             </div>
         </div>
     )

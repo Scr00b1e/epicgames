@@ -1,0 +1,11 @@
+[{
+    "id": 0,
+    "title": "Explore",
+    "link": "/"
+}, 
+{
+    "id": 1,
+    "title": "Browse",
+    "link": "/catalog"
+}
+]

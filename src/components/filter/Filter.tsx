@@ -1,13 +1,16 @@
 import React from 'react'
 import Search from '../search/Search'
+import filter from './filter.json'
 import './filter.scss'
 
 type SearchProps = {
     search: string
     setSearch: any
+    category: any
+    setCategory: (id: number) => void
 }
 
-const Filter: React.FC<SearchProps> = ({search, setSearch}) => {
+const Filter: React.FC<SearchProps> = ({search, setSearch, category, setCategory}) => {
     const [active, setActive] = React.useState(null)
     const onClickFilter = (index: any) => {
         if (active === index) {
@@ -16,42 +19,35 @@ const Filter: React.FC<SearchProps> = ({search, setSearch}) => {
 
         setActive(index)
     }
-
-    const filter = [
-        {
-            name: 'Genre',
-            id: 0
-        },
-        {
-            name: 'Types',
-            id: 1
-        },
-        {
-            name: 'Features',
-            id: 2
-        }
-    ]
+    console.log(category);
+    
 
     return (
         <aside className='filter'>
             <div className="filter__words">
                 <h1 className='filter__title'>Filter</h1>
-                <h1 className='filter__title'>Reset</h1>
             </div>
             <Search search={search} setSearch={setSearch}/>
             <ul className='filter__list'>
                 {
-                    filter.map((obj, index) => (
-                        <li className='filter__item' key={obj.id} onClick={() => onClickFilter(index)}>
+                    filter.map((obj, i) => (
+                        <li className='filter__item' key={obj.id} onClick={() => onClickFilter(i)}>
                             <div className='filter__visible'>
                                 <p className="filter__text">
                                     {obj.name}
                                 </p>
                                 <img src="./img/more.svg" alt="" />
                             </div>
-                            <ul className={active === index ? 'active' : ''}>
+                            <ul className={active === i ? 'active' : ''}>
+                                <li 
+                                    key={i} 
+                                    onClick={() => setCategory(i)} 
+                                    className={category === i ? 'active' : ''}>
+
+                                    {obj.genre}
+                                </li>
                                 <li>
-                                    test
+                                    {obj.genre1}
                                 </li>
                             </ul>
                         </li>

@@ -26,6 +26,15 @@
         ul {
             display: none;
         }
+        li {
+            margin: 20px 0px 20px 10px;
+            opacity: .5;
+            cursor: pointer;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
         .active {
             display: block;
         }
