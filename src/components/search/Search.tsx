@@ -1,16 +1,28 @@
 import React from 'react'
- import './search.scss'
+import './search.scss'
 
-const Search: React.FC = () => {
+type SearchType = {
+    search: string
+    setSearch: any
+}
+
+const Search: React.FC<SearchType> = ({search, setSearch}) => {
+    
+    const searchRef = React.useRef(null)
+
+    const onChangeSearch = (event: { target: { value: React.SetStateAction<string> } }) => {
+        setSearch(event.target.value)
+    }
+
     return (
-        <div className="epicgames_search">
-            <input placeholder="search" type="search"/>
-                <img src="./img/search.png" alt=""/>
-                    <ul>
-                        <li>Explore</li>
-                        <li>Browse</li>
-                        <li>News</li>
-                    </ul>
+        <div className="search">
+            <img src="./img/search.png" alt="" />
+            <input 
+                value={search}
+                placeholder="search" 
+                type="search" 
+                ref={searchRef} 
+                onChange={onChangeSearch} />
         </div>
     )
 }

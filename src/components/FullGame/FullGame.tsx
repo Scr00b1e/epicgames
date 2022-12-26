@@ -1,9 +1,11 @@
 import React from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import './fullGame.scss'
+import Skeleton from './Skeleton'
 
 const FullGame: React.FC = () => {
     const [game, setGame] = React.useState<{
+        id: string
         image: string
         title: string
         price: number
@@ -15,7 +17,7 @@ const FullGame: React.FC = () => {
     React.useEffect(() => {
         const GetItems = async () => {
             try {
-                await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games` + id)
+                await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games/` + id)
                     .then((res) => {
                         return res.json()
                     }).then((arr) => {
@@ -30,11 +32,17 @@ const FullGame: React.FC = () => {
     }, [])
 
     if (!game) {
-        return <p>Loading...</p>
+        return (
+            <div className="container">
+                <div className="fullGame">
+                    <Skeleton />
+                </div>
+            </div>
+        )
     }
 
     return (
-    <div className={'spider'}>
+    <div className='spider'>
         <div className="container">
 
             <div className="spider_left">
@@ -154,7 +162,6 @@ const FullGame: React.FC = () => {
                 <button>SHARE</button>
                 <button>COMPLAIN</button>
                 </div>
-            </div>
 
             <div className="spider_info">
                 <div className="container">

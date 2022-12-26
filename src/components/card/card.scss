@@ -1,18 +1,9 @@
 .card {
   margin: 15px;
   cursor: pointer;
-  // overflow: hidden;
-
-  // img {
-  //   overflow: hidden;
-  //   transition: all 2s ease-in-out;
-
-  //   &:hover {
-  //     scale: 1.1;
-  //   }
-  // }
 
   &__top {
+    position: relative;
 
     h4 {
       color: white;
@@ -20,6 +11,22 @@
       margin-top: 10px;
     }
   }
+
+  &__img {
+    &:hover {
+      background: rgba(#fff, .3);
+    }
+  }
+
+  &__add {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    z-index: 100;
+    width: 30px;
+    height: 30px;
+  }
+
   &__bottom {
     display: flex;
     column-gap: 8px;
@@ -29,6 +36,7 @@
       align-items: center;
       column-gap: 8px;
     }
+
     li {
       color: white;
       list-style: none;
@@ -38,6 +46,7 @@
         list-style: none;
       }
     }
+
     p {
       color: white;
       background: #0074E4;
