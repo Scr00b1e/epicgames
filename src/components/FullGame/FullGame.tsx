@@ -49,12 +49,12 @@ const FullGame: React.FC = () => {
                         <h1>{game.title}</h1>
 
                         <div>
-                            <img src="../img/christmas.jpg" alt="" className="fullGame_img" />
+                            <img src="https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg" alt="" className="fullGame_img" />
                         </div>
 
                         <div className="trailer">
-                            <img src="../img/christmas.jpg" alt="" />
-                            <img src="../img/christmas.jpg" alt="" />
+                            <img src="https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg" alt="" />
+                            <img src="https://cdn1.epicgames.com/b30b6d1b4dfd4dcc93b5490be5e094e5/offer/RDR2476298253_Epic_Games_Wishlist_RDR2_2560x1440_V01-2560x1440-2a9ebe1f7ee202102555be202d5632ec.jpg" alt="" />
                             <img src="../img/milesmorales.png" alt="" />
                             <img src="../img/milesmorales.png" alt="" />
                         </div>

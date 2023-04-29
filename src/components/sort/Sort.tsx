@@ -14,7 +14,7 @@ interface SortProperty {
 
 export const sortList: SortItem[] = [
   { name: 'popular', sortProperty: SortPropertyEnum.RATING_DESC },
-  { name: 'alhapetic', sortProperty: SortPropertyEnum.TITLE_DESC },
+  { name: 'alhabetic', sortProperty: SortPropertyEnum.TITLE_DESC },
   { name: 'Price: Low', sortProperty: SortPropertyEnum.PRICE_ASC },
   { name: 'Price: High', sortProperty: SortPropertyEnum.PRICE_DESC },
 ]

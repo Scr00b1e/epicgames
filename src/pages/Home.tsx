@@ -6,39 +6,14 @@ import Browse from '../components/browse/Browse';
 import Skeleton from '../components/card/Skeleton';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper'
+import NotFound from '../components/notFound/NotFound';
+import useFetch from '../hooks/useFetch';
 
 import 'swiper/scss'
 import 'swiper/scss/navigation'
-import NotFound from '../components/notFound/NotFound';
-
 
 const Home: React.FC = () => {
-    const [items, setItems] = React.useState([])
-    const [isLoading, setIsLoading] = React.useState(false)
-
-    const GetItems = async () => {
-        try {
-            setIsLoading(true)
-            await fetch('https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games')
-                .then((res) => {
-                    return res.json()
-                }).then((arr) => {
-                    setItems(arr)
-                    setIsLoading(false)
-                })
-        } catch {
-            alert('check network!')
-            return (
-                <div className='home'>
-                    <NotFound />
-                </div>
-            )
-        }
-    }
-
-    React.useEffect(() => {
-        GetItems()
-    }, [])
+    const { items, error, isLoading } = useFetch('https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/games')
 
     const cards = items.map((obj: any) => (
         <SwiperSlide>
@@ -47,6 +22,14 @@ const Home: React.FC = () => {
     ))
 
     const skeletons = [...new Array(6)].map((_, id) => <Skeleton key={id} />)
+
+    if (error) {
+        return (
+            <div className='home'>
+                <NotFound />
+            </div>
+        )
+    }
 
     return (
         <div className='home'>

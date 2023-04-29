@@ -8,13 +8,11 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../redux/store'
 import NotFound from '../../components/notFound/NotFound'
 import Search from '../../components/search/Search'
+import useFetch from '../../hooks/useFetch'
 
 const Catalog: React.FC = () => {
     //states
-    const [items, setItems] = React.useState([])
-    const [isLoading, setIsLoading] = React.useState(false)
     const [search, setSearch] = React.useState('')
-    const [category, setCategory] = React.useState(0)
     const navigate = useNavigate()
 
     //redux
@@ -25,25 +23,9 @@ const Catalog: React.FC = () => {
     const sortBy = sort.sortProperty.replace('-', '')
 
     //fetching
-    const getGames = async () => {
-        try {
-            setIsLoading(true)
-            await fetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/all?&sortBy=${sortBy}&order=${order}`)
-                .then((res) => {
-                    return res.json()
-                })
-                .then((arr) => {
-                    setItems(arr)
-                    setIsLoading(false)
-                })
-        } catch {
-            navigate('/')
-            return <NotFound />
-        }
-    }
     React.useEffect(() => {
-        getGames()
-    }, [sort, category])
+    }, [sort])
+    const { items, error, isLoading } = useFetch(`https://6290eebe665ea71fe13e1a80.mockapi.io/pizza/all?&sortBy=${sortBy}&order=${order}`)
 
     //for items
     const games = items.filter((obj: any) => {
@@ -57,6 +39,11 @@ const Catalog: React.FC = () => {
         ))
     const skeletons = [...new Array(12)].map((_, id) => <Skeleton key={id} />)
 
+    if (error) {
+        navigate('/')
+        return <NotFound />
+    }
+
     return (
         <div className='container'>
             <div className="catalog">
@@ -66,7 +53,7 @@ const Catalog: React.FC = () => {
                         isLoading ? skeletons : games
                     }
                 </div>
-                <Search search={search} setSearch={setSearch}/>
+                <Search search={search} setSearch={setSearch} />
             </div>
         </div>
     )
